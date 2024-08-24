@@ -5,6 +5,44 @@
 
 This project is a Task Management system implemented using **NestJS**. The system includes user management, task management, tagging, commenting, and notification features.
 
+
+## Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+
+2. **Install Dependencies**
+   Run the following command to install all the necessary dependencies:
+   ```bash
+   npm install
+   ```
+
+3. **Database Setup**
+   - Ensure that the database is created with the name: `taskmanagement_assessment`.
+   - Update your `.env` file with the correct database connection details.
+
+4. **Run Database Migrations**
+   Run the following command to apply the necessary migrations and set up the database schema:
+   ```bash
+   npm run migrate:run
+   ```
+
+5. **Start the Application**
+   Use the following command to start the project in development mode:
+   ```bash
+   npm run start:dev
+   ```
+
+## Technology Stack
+
+- **Framework**: NestJS
+- **Authentication**: JWT
+- **Database**: PostgreSQL/MySQL (or any relational database)
+- **ORM**: TypeORM (with migrations)
+
 ## Features
 
 ### 1. User Management
@@ -46,42 +84,6 @@ This project is a Task Management system implemented using **NestJS**. The syste
 - **Relational Database**: The project uses a relational database such as PostgreSQL or MySQL.
 - **Database Migrations**: Migrations are provided to set up the database schema.
 
-## Setup Instructions
-
-1. **Clone the Repository**
-   ```bash
-   git clone <repository-url>
-   cd <project-directory>
-   ```
-
-2. **Install Dependencies**
-   Run the following command to install all the necessary dependencies:
-   ```bash
-   npm install
-   ```
-
-3. **Database Setup**
-   - Ensure that the database is created with the name: `taskmanagement_assessment`.
-   - Update your `.env` file with the correct database connection details.
-
-4. **Run Database Migrations**
-   Run the following command to apply the necessary migrations and set up the database schema:
-   ```bash
-   npm run migrate:run
-   ```
-
-5. **Start the Application**
-   Use the following command to start the project in development mode:
-   ```bash
-   npm run start:dev
-   ```
-
-## Technology Stack
-
-- **Framework**: NestJS
-- **Authentication**: JWT
-- **Database**: PostgreSQL/MySQL (or any relational database)
-- **ORM**: TypeORM (with migrations)
 
 ## License
 
