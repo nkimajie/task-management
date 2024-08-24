@@ -1,71 +1,89 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Task Management Assessment
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Task Overview
 
-## Description
+This project is a Task Management system implemented using **NestJS**. The system includes user management, task management, tagging, commenting, and notification features.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Features
 
-## Installation
+### 1. User Management
+- **Registration and Login**: Implemented with JWT authentication.
+- **User Roles**: 
+  - **Admin**: Has the ability to manage all aspects of the system.
+  - **Regular User**: Limited to managing their own tasks and comments.
+- **Admin Creation**: Only Admins have the authority to create other Admins.
 
-```bash
-$ npm install
-```
+### 2. Task Management
+- **Task Creation**: Users can create tasks with a title, description, due date, and status.
+- **Task Assignment**: Users can assign tasks to themselves or to others.
+- **Status Updates**: 
+  - Users can update the status of tasks they own.
+  - Admins can update the status of any task.
 
-## Running the app
+### 3. Tagging System
+- **Tagging**: Users can add tags to tasks (e.g., "Urgent", "Bug", "Feature").
+- **Filtering**: Users can filter tasks by tags.
 
-```bash
-# development
-$ npm run start
+### 4. Commenting System
+- **Comment Creation**: Users can add comments to tasks.
+- **Comment Management**: 
+  - Users can edit or delete their own comments.
+  - Admins can delete any comment.
 
-# watch mode
-$ npm run start:dev
+### 5. Notifications
+- **Task Assignment Notifications**: Notify users when they are assigned a task.
+- **Task Status Notifications**: Notify users when the status of a task they are involved in is updated.
 
-```
+### 6. Validation
+- **Payload Validation**: Implemented for all endpoints to ensure proper data formatting (e.g., valid email format, required fields).
 
-## Test
+### 7. Pagination & Sorting
+- **Pagination**: Implemented for tasks.
+- **Sorting**: Allows sorting tasks by due date and filtering by status.
 
-```bash
-# unit tests
-$ npm run test
+### 8. Database
+- **Relational Database**: The project uses a relational database such as PostgreSQL or MySQL.
+- **Database Migrations**: Migrations are provided to set up the database schema.
 
-# e2e tests
-$ npm run test:e2e
+## Setup Instructions
 
-# test coverage
-$ npm run test:cov
-```
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
 
-## Support
+2. **Install Dependencies**
+   Run the following command to install all the necessary dependencies:
+   ```bash
+   npm install
+   ```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+3. **Database Setup**
+   - Ensure that the database is created with the name: `taskmanagement_assessment`.
+   - Update your `.env` file with the correct database connection details.
 
-## Stay in touch
+4. **Run Database Migrations**
+   Run the following command to apply the necessary migrations and set up the database schema:
+   ```bash
+   npm run migrate:run
+   ```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+5. **Start the Application**
+   Use the following command to start the project in development mode:
+   ```bash
+   npm run start:dev
+   ```
+
+## Technology Stack
+
+- **Framework**: NestJS
+- **Authentication**: JWT
+- **Database**: PostgreSQL/MySQL (or any relational database)
+- **ORM**: TypeORM (with migrations)
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the MIT License.
+```
